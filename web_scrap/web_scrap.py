@@ -112,7 +112,5 @@ def search_and_download(search_term: str, driver_path: str, target_path='./image
     with webdriver.Chrome(executable_path=driver_path) as wd:
         res = fetch_image_urls(search_term, number_images, wd=wd, sleep_between_interactions=0.1)
 
-    print("Length of res is {}", len(res))
-
     for i, elem in enumerate(res):
         persist_image(target_folder, elem, (i+1))
